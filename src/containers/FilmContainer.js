@@ -80,6 +80,8 @@ const FilmContainer = () => {
 
     // function for handling the next button click
     // when the 'handleNextButtonClick' is called it will do the 'setCurrentFilmIndex' take the 'currentFilmIndex' value and +1
+    // create if condition so that only if the 'currentFilmIndex' is less than the length of the films array only then it will re-set the currentFilmIndex and +1
+
     const handleNextButtonClick = () => {
         if (currentFilmIndex < films.length - 1) {
             setCurrentFilmIndex(currentFilmIndex + 1);
@@ -88,6 +90,7 @@ const FilmContainer = () => {
 
     // function for handling the next button click
     // when the 'handlePreviousButtonClick' is called it will do the 'setCurrentFilmIndex' take the 'currentFilmIndex' value and -1
+    // create if condition so that only if the 'currentFilmIndex' is more than 0 only then it will re-set the currentFilmIndex and -1
     const handlePreviousButtonClick = () => {
         if (currentFilmIndex > 0) {
             setCurrentFilmIndex(currentFilmIndex - 1);
