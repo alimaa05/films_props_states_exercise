@@ -7,7 +7,7 @@ import Buttons from "../components/Buttons";
 //create a function that takes a state - STATE WITH AN ARRAY OF ALL THE FILMS 
 const FilmContainer = () => {
 
-    // create a state
+    // create a state - holds all the films
     const [films, setFilms] = useState(
         [
             {
@@ -71,34 +71,39 @@ const FilmContainer = () => {
         ]
     )
 
-// create a state for the index of the film currently being displayed 
-// value - currentFilmIndex
-// function - setCurrentFilmIndex
-// setting a specific value of 0 
-const [currentFilmIndex, setCurrentFilmIndex] = useState(0);
+    // create a state for the to keep track of current index for the films - i.e. the film currently being displayed 
+    // value - currentFilmIndex
+    // function - setCurrentFilmIndex
+    // setting a specific value of 0 
+    const [currentFilmIndex, setCurrentFilmIndex] = useState(0);
 
 
-// function for handling the next button click
-// when the 'handleNextButtonClick' is called it will do the 'setCurrentFilmIndex' take the 'currentFilmIndex' value and +1
-const handleNextButtonClick = () => {
-    setCurrentFilmIndex(currentFilmIndex +1);
-}
+    // function for handling the next button click
+    // when the 'handleNextButtonClick' is called it will do the 'setCurrentFilmIndex' take the 'currentFilmIndex' value and +1
+    const handleNextButtonClick = () => {
+        if (currentFilmIndex < films.length - 1) {
+            setCurrentFilmIndex(currentFilmIndex + 1);
+        }
+    }
 
-// function for handling the next button click
-// when the 'handlePreviousButtonClick' is called it will do the 'setCurrentFilmIndex' take the 'currentFilmIndex' value and -1
-const handlePreviousButtonClick = () => {
-    setCurrentFilmIndex(currentFilmIndex -1);
-}
+    // function for handling the next button click
+    // when the 'handlePreviousButtonClick' is called it will do the 'setCurrentFilmIndex' take the 'currentFilmIndex' value and -1
+    const handlePreviousButtonClick = () => {
+        if (currentFilmIndex > 0) {
+            setCurrentFilmIndex(currentFilmIndex - 1);
+        }
+    }
 
-// use empty<> by default - <div> if you want to manipulate anything within this section 
+    // use empty<> by default - <div> if you want to manipulate anything within this section 
 
-// returing 
-    return(
+    // returing a heading
+
+    return (
         <div>
             <h1>Database of Movies on the Internet</h1>
-            <Film film={films[currentFilmIndex]}/>
+            <Film film={films[currentFilmIndex]} />
             <Buttons onPreviousClick={handlePreviousButtonClick}
-                    onNextClick={handleNextButtonClick}/>
+                onNextClick={handleNextButtonClick} />
 
         </div>
 
