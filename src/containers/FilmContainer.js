@@ -109,6 +109,8 @@ const FilmContainer = () => {
 
     // use empty<> by default - <div> if you want to manipulate anything within this section 
     // returing a heading
+    // from 'Film' component returining a 'film' property that has the 'films' state value within 'filmContainer' and passing 'currentFilmIndex' so we return only one film at given time
+    // from 'Buttons' component we want to return the 'onPrevious', 'onNext', 'submit' buttons and need to pass the 'maxFilmIndex' and pass as props in the Button component 
 
     return (
         <div>
