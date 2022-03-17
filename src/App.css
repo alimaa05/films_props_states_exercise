@@ -1,3 +1,31 @@
+
+
 input{
-    width: 100px;
+    width: 50px;
+}
+
+body{
+    background-color: rgb(199, 178, 240);
+
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.film-container{
+   border:5px solid gray;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 1rem;
+}
+
+.title{
+    border-bottom: 3px solid black;
+    width: 100%;
+    text-align: center;
 }

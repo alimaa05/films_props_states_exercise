@@ -9,9 +9,9 @@ const Film = ({film}) => {
 // returning all the elements for each film within the films array 
 
 // <hr /> - visual line break 
-    return(
-        <>
-            <h2>File Title: {film.title}</h2>
+    return( 
+        <div className='film-container'>
+            <h2 className="title">Film Title: {film.title}</h2>
             <h3>Duration: {film.duration}</h3>
             <h3>Rating: {film.rating}</h3>
         
@@ -26,7 +26,7 @@ const Film = ({film}) => {
             <h3>Directed by: </h3>
             <h4>{film.director.name}</h4>
 
-        </>
+        </div>
     )
 
 }
