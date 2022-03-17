@@ -97,8 +97,17 @@ const FilmContainer = () => {
         }
     }
 
-    // use empty<> by default - <div> if you want to manipulate anything within this section 
+    // create form submission handler 
+    // 
+    const handleFilmSubmission = (event) => {
+        event.preventDefault();
 
+        setCurrentFilmIndex(event.target["film-selector"].value -1);
+    }
+
+
+
+    // use empty<> by default - <div> if you want to manipulate anything within this section 
     // returing a heading
 
     return (
@@ -106,7 +115,9 @@ const FilmContainer = () => {
             <h1>Database of Movies on the Internet</h1>
             <Film film={films[currentFilmIndex]} />
             <Buttons onPreviousClick={handlePreviousButtonClick}
-                onNextClick={handleNextButtonClick} />
+                onNextClick={handleNextButtonClick} 
+                submitButton={handleFilmSubmission}
+                maxFilmIndex={films.length} />
 
         </div>
 
