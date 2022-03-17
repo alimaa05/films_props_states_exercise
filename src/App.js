@@ -4,6 +4,7 @@ import FilmContainer from './containers/FilmContainer';
 
 
 // call on the components at the highest level
+// app.js is rendering our filmContainer and title componenet 
 function App() {
 
   return(
